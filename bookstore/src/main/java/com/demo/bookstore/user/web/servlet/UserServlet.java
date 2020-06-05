@@ -125,8 +125,8 @@ public class UserServlet extends BaseServlet {
         MimeMessage msg=new MimeMessage(session);
         try {
             msg.setFrom(new InternetAddress(from));
-            //msg.setRecipients(MimeMessage.RecipientType.TO,"tmlin1982@gmail.com");
-            //msg.setRecipients(MimeMessage.RecipientType.TO,"stu920268@yahoo.com.tw,tmlin1982@gmail.com");
+            //msg.setRecipients(MimeMessage.RecipientType.TO,"xxx@gmail.com");
+            //msg.setRecipients(MimeMessage.RecipientType.TO,"xxx@yahoo.com.tw,xxx@gmail.com");
             msg.setRecipients(MimeMessage.RecipientType.TO,form.getEmail());
 
             msg.setSubject(subject);
