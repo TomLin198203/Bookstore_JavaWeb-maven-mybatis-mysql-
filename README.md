@@ -18,16 +18,16 @@
 #	      圖書查詢 有分頁功能
 #	    訂單(查詢所有訂單,按狀態查詢訂單,發貨,取消訂單)
 
-# jdbcConfig.properties (src/main/resources/)
+# jdbcConfig.properties (bookstore/src/main/resources/)
 #	  這為設置數據庫的名稱, 數據庫用戶登入的帳號及密碼
-# email_template.properties (src/main/resources/)
+# email_template.properties (bookstore/src/main/resources/)
 #	  這為發送mail的設置, 此設置是從gmail server發送mail. 
 #	  uname: 為寄送mail的username, 
 #	  pwd:為寄送mail的password,
 #	  from:寄件人的mail
 
 # 步驟:
-#   1. 下載Mysql, 創建數據庫名稱為 bookstore ,並執行sql中createSQL.txt和 SQLData.txt 的內容
+#   1. 下載Mysql, 創建數據庫名稱為 bookstore ,並執行bookstore/sql中createSQL.txt和 SQLData.txt 的內容
 #   2. 下載Tomcat
 #   3. 使用 Intellij Idea 導入project
 #   4. 運行
