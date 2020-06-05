@@ -114,8 +114,7 @@ public class UserServlet extends BaseServlet {
         prop_sendmail.setProperty("mail.smtp.port",port);
         Authenticator auth=new Authenticator() {
             @Override
-            protected PasswordAuthentication getPasswordAuthentication() {
-                //return new PasswordAuthentication("tmlin1982","tmlin710310");
+            protected PasswordAuthentication getPasswordAuthentication() {                
                 return new PasswordAuthentication(uname,pwd);
             }
         };
