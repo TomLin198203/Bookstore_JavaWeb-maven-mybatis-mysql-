@@ -1,0 +1,48 @@
+CREATE DATABASE bookstore;
+
+/*使用者*/
+CREATE TABLE tb_user(
+	uid CHAR(32) PRIMARY KEY, /*主鍵*/
+	username VARCHAR(50) NOT NULL,
+	`password` VARCHAR(50) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	`code` CHAR(64) NOT NULL, /*激活碼*/
+	state INT /*用戶狀態,有兩種是否激活*/
+);
+
+/*分類*/
+CREATE TABLE category(
+	cid CHAR(32) PRIMARY KEY, /*主鍵*/
+	cname VARCHAR(100) NOT NULL  /*分類名稱*/
+);
+
+/*圖書表*/
+CREATE TABLE book(
+	bid CHAR(32) PRIMARY KEY, /*主鍵*/
+	bname VARCHAR(100), /*圖書名*/
+	price DECIMAL(5,1), /*單價*/
+	author VARCHAR(20), /*作者*/
+	del TINYINT(1), /*0:此書存在, 1:此書已被刪除*/
+	image VARCHAR(200), /*圖片*/
+	cid CHAR(32), /*所屬分類*/
+	FOREIGN KEY (cid) REFERENCES category(cid) /*建立主外鍵關係*/
+);
+
+
+/*訂單表*/
+CREATE TABLE orders(
+	oid CHAR(32) PRIMARY KEY, /*主鍵*/
+	ordertime DATETIME, /*訂單生成時間*/
+	total DECIMAL(10,0), /*訂單合計*/
+	state SMALLINT(1), /*訂單狀態:未付款(1),已付款但未發貨(2),已發貨但未確認收貨(3),收貨結束(4),訂單取消(5)*/
+	uid CHAR(32), /*訂單的主人*/
+	address VARCHAR(200), /*訂單的收貨地址*/
+	FOREIGN KEY (uid) REFERENCES tb_user(uid) /*建立主外鍵關係*/
+);
+
+/*管理員*/
+CREATE TABLE t_admin(
+	adminId CHAR(2) PRIMARY KEY,
+	adminname VARCHAR(12) NOT NULL,
+	adminpwd VARCHAR(12) NOT NULL
+);

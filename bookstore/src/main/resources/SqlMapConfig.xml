@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入外部配置文件  -->
+    <properties resource="jdbcConfig.properties"></properties>
+
+    <!-- 配置開啟二級緩存 -->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!-- 配置別名 -->
+    <typeAliases>
+        <package name="com.demo.bookstore.user.domain"/>
+        <package name="com.demo.bookstore.category.domain"/>
+        <package name="com.demo.bookstore.book.domain"/>
+        <package name="com.demo.bookstore.order.domain"/>
+        <package name="com.demo.bookstore.admin.domain"/>
+    </typeAliases>
+
+    <!-- 配置環境 -->
+    <environments default="mysql">
+        <environment id="mysql">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+                <!--
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/bookstore"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+                -->
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 指定帶有接口的dao所在位置-->
+    <mappers>
+        <package name="com.demo.bookstore.user.dao"/>
+        <package name="com.demo.bookstore.category.dao"/>
+        <package name="com.demo.bookstore.book.dao"/>
+        <package name="com.demo.bookstore.order.dao"/>
+        <package name="com.demo.bookstore.admin.dao"/>
+    </mappers>
+
+</configuration>

@@ -1,0 +1,13 @@
+INSERT INTO book VALUES('1','Java編程思想 (第4版)','75.6','Bruce Eckel','book_img/1.jpg','1',0);
+INSERT INTO book VALUES('2','Java核心技術卷1','68.5','xxxx','book_img/2.jpg','1',0);
+INSERT INTO book VALUES('3','Java就業培訓教程','39.9','xxxx','book_img/3.jpg','1',0);
+INSERT INTO book VALUES('4','Head First Java','47.5','xxxx','book_img/4.jpg','1',0);
+INSERT INTO book VALUES('5','JavaWeb開發詳解','83.3','孫鑫','book_img/5.jpg','2',0);
+INSERT INTO book VALUES('6','Struts2深入詳解','63.2','孫鑫','book_img/6.jpg','2',0);
+INSERT INTO book VALUES('7','精通Hibernate','30.0','孫衛琴','book_img/7.jpg','2',0);
+INSERT INTO book VALUES('8','精通Spring2.x','63.2','陳雄華','book_img/8.jpg','2',0);
+INSERT INTO book VALUES('9','Javascript權威指南','93.6','大衛·佛萊納根','book_img/9.jpg','3',0);
+
+insert into t_admin values('10','Admin','12345');
+
+insert into tb_user values('193DF1D4D3C9461CBE34B61E6947F5B5','User','12345','xxx@yahoo.com.tw','AC93E06FCEFD43AAB70AC0B1CFC5F0E24D4167A0FC3449D4B008B8CDE0EF1CFC',1);
